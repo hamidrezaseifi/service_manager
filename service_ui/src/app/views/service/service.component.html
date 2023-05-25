@@ -1,0 +1,33 @@
+
+<div style="width: 90%; margin: auto; margin-top: 20px;">
+    <div class="card">
+      <div class="card-header page-header">
+        {{serviceInfo.typeTitle}} Service Information ...
+      </div>
+      <div class="card-body" style="min-height: calc(100vh - 200px);">
+        <div class="alert alert-primary" [ngClass]="{'alert-primary' : serviceInfo.statusTitle == 'Running', 
+        'alert-danger' : serviceInfo.statusTitle != 'Running'}" role="alert">
+            Status: {{serviceInfo.statusTitle}}
+        </div>
+        <div class="card">
+            <div class="card-header page-header">
+                <span class="">Logs ... </span>
+                <span class="logs-header-item">Auto Reload <input type="checkbox" [checked]="autoReload" id="autoReload" name="autoReload" (click)="toggleReloadLogs()" /></span>
+                <span class="logs-header-item"><button class="btn" (click)="reloadService()">Reload <i class="bi bi-arrow-clockwise"></i></button></span>
+                <span class="logs-header-item" *ngIf="serviceInfo.statusTitle != 'Running'"><button class="btn btn-outline-success" (click)="start()">Start <i class="bi bi-play-fill"></i></button></span>
+                <span class="logs-header-item" *ngIf="serviceInfo.statusTitle == 'Running'"><button class="btn btn-outline-danger" (click)="stop()">Stop <i class="bi bi-stop-fill"></i></button></span>
+            </div>
+            <div class="card-body" style="max-height: calc(100vh - 400px); overflow: auto;">
+                <div *ngFor="let log of serviceInfo.logs;let idx=index;" class="alert log-alert" [ngClass]="{'alert-success' : log.level == 'INFO', 
+                'alert-danger' : log.level == 'ERROR', 'alert-warning' : log.level == 'WARNING'}" role="alert">
+                    {{log.logDateTimeStr}} : {{log.level}} : {{log.message}}
+                </div>
+            </div>
+        </div>    
+
+       </div>
+    </div>
+  
+  </div>
+  
+  

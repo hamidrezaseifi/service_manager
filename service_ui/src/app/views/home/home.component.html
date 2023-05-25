@@ -1,0 +1,30 @@
+
+<div style="width: 90%; margin: auto; margin-top: 20px;">
+  <div class="card" style="">
+    <div class="card-header page-header">
+      Home
+    </div>
+    <div class="card-body" style="min-height: calc(100vh - 200px);">
+
+      <table class="table">
+        <thead class="table-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Module Name</th>
+          <th scope="col">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of services;let idx=index;" (click)="showService(item)" style="cursor: pointer;">
+          <th style="width: 60px;;" scope="row">{{ idx }}</th>
+          <td>{{ item.typeTitle }}</td>
+          <td style="width: 150px;;">{{ item.statusTitle }}</td>
+        </tr>
+        
+        </tbody>
+      </table>
+     </div>
+  </div>
+
+</div>
+
