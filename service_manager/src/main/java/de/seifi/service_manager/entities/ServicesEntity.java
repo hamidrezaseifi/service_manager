@@ -23,6 +23,7 @@ public class ServicesEntity {
     private String comments;
 
     public ServicesEntity() {
+        this.id = UUID.randomUUID();
     }
 
     public UUID getId() {

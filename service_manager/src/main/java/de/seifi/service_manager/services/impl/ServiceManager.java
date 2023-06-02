@@ -1,10 +1,12 @@
 package de.seifi.service_manager.services.impl;
 
+import de.seifi.service_manager.enums.ServiceStatus;
 import de.seifi.service_manager.models.ServiceInformation;
 import de.seifi.service_manager.models.ServiceLog;
 import de.seifi.service_manager.models.ServiceModel;
 import de.seifi.service_manager.services.IServiceManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ServiceManager implements IServiceManager {
@@ -27,12 +29,16 @@ public class ServiceManager implements IServiceManager {
 
     @Override
     public ServiceInformation getServiceInfo() {
-        return null;
+        ServiceInformation information = new ServiceInformation(this.serviceModel, ServiceStatus.IDLE);
+
+        return information;
     }
 
     @Override
     public List<ServiceLog> getServiceLastLogs() {
-        return null;
+        List<ServiceLog> logs = new ArrayList<>();
+
+        return logs;
     }
 
     @Override

@@ -16,7 +16,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let item of services;let idx=index;" (click)="showService(item)" style="cursor: pointer;">
-          <th style="width: 60px;;" scope="row">{{ idx }}</th>
+          <th style="width: 60px;;" scope="row">{{ idx + 1 }}</th>
           <td>{{ item.typeTitle }}</td>
           <td style="width: 150px;;">{{ item.statusTitle }}</td>
         </tr>
