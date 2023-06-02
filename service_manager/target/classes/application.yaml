@@ -1,0 +1,23 @@
+
+server.port: 1234
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/services
+    driver-class-name: org.postgresql.Driver
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+    username: postgres
+    password: 7342
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show_sql: true
+    properties:
+      hibernate:
+        SQL: TRACE
+        type: TRACE
+
+service_manager:
+  cors:
+    allowedOrigings: http://localhost:4200

@@ -1,13 +1,12 @@
 package de.seifi.service_manager.models;
 
 import de.seifi.service_manager.enums.ServiceStatus;
-import de.seifi.service_manager.enums.ServiceType;
 
 import java.util.List;
 
 public class ServiceInformation {
 
-    private ServiceType type;
+    private ServiceModel service;
 
     private ServiceStatus status;
 
@@ -16,30 +15,26 @@ public class ServiceInformation {
     public ServiceInformation() {
     }
 
-    public ServiceInformation(ServiceType type,
+    public ServiceInformation(ServiceModel service,
                               ServiceStatus status) {
-        this.type = type;
+        this.service = service;
         this.status = status;
     }
 
-    public ServiceInformation(ServiceType type,
+    public ServiceInformation(ServiceModel service,
                               ServiceStatus status,
                               List<ServiceLog> logs) {
-        this.type = type;
+        this.service = service;
         this.status = status;
         this.logs = logs;
     }
 
-    public ServiceType getType() {
-        return type;
+    public ServiceModel getService() {
+        return service;
     }
 
     public String getTypeTitle() {
-        return type.getTitle();
-    }
-
-    public void setType(ServiceType type) {
-        this.type = type;
+        return service.getServiceName();
     }
 
     public ServiceStatus getStatus() {

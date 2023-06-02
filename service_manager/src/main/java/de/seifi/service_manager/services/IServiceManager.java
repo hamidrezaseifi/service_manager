@@ -9,16 +9,16 @@ import java.util.UUID;
 
 public interface IServiceManager {
 
-    List<ServiceModel> getServiceList();
-    void setSetInterval(UUID serviceId, Long interval);
+    ServiceModel getServiceModel();
 
-    List<ServiceInformation> getServiceInfoList();
+    void setInterval(Long interval);
 
-    ServiceInformation getServiceInfo(UUID serviceId);
+    ServiceInformation getServiceInfo();
 
-    List<ServiceLog> getServiceLastLogs(UUID serviceId);
 
-    void stop(UUID serviceId);
+    List<ServiceLog> getServiceLastLogs();
 
-    void start(UUID serviceId);
+    void stop();
+
+    void start();
 }
